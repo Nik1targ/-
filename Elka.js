@@ -82,3 +82,108 @@ let outerPlanets = ["юпитер","Сатурн","Уран","Нептун"];
 
 let allPlanets = innerPlanets.concat(outerPlanets);
 console.log(allPlanets);
+
+
+let words = ["Я","люблю","JS"];
+
+let sentence = words.join(" ");
+console.log(sentence);
+
+
+
+
+let toys = ["шар","звезда","колокольчик"];
+
+let list = toys.join(", ");
+console.log(list);
+
+
+
+let toyString= "шар,звезда,колокольчик";
+
+let toyz = toyString.split(", ");
+console.log(toyz);
+
+
+let toyc = [
+    {
+        name:"Большой шар с рисунком Цветок",
+        count:2,
+        year:1960,
+        shape:"шар",
+        color:"Желтый",
+        size:"большой",
+        favorite:false
+    },
+    {
+        name:"Зеленый шар с цветочным узором",
+        count: 5,
+        year: 2000,
+        shape: "шар",
+        color: "зеленый",
+        size: "большой",
+        favorite: false
+    },
+    {
+        name:" Крастный шар с напыление",
+        count:2,
+        year:1960,
+        shape:"шар",
+        color:"Желтый",
+        size:"большой",
+        favorite:false
+    },
+    {
+        name:"Большой шар с рисунком Цветок",
+        count:2,
+        year:1960,
+        shape:"шар",
+        color:"Желтый",
+        size:"большой",
+        favorite:false
+    },
+    {
+        name:"Зеленый шар с цветочным узором",
+        count: 5,
+        year: 2000,
+        shape: "шар",
+        color: "зеленый",
+        size: "большой",
+        favorite: false
+    },
+    {
+        name:" Крастный шар с напыление",
+        count:2,
+        year:1960,
+        shape:"шар",
+        color:"Желтый",
+        size:"большой",
+        favorite:false
+    },
+]
+
+
+toyc.forEach(toy => {
+    console.log(
+        toy.name + 
+        " - " + 
+        toy.color + 
+        ", форма:" +
+        toy.shape + 
+        ", колличество:" +
+        toy.count
+    );
+});
+
+
+let updateToys = toys.map(toy =>{
+    return {
+        ...toy,
+        count:toy.count + 1
+    };
+});
+
+console.log(updateToys);
+
+
+
