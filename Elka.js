@@ -92,10 +92,10 @@ console.log(sentence);
 
 
 
-let toys = ["шар","звезда","колокольчик"];
+// let toys = ["шар","звезда","колокольчик"];
 
-let list = toys.join(", ");
-console.log(list);
+// let list = toys.join(", ");
+// console.log(list);
 
 
 
@@ -105,7 +105,7 @@ let toyz = toyString.split(", ");
 console.log(toyz);
 
 
-let toyc = [
+let toys = [
     {
         name:"Большой шар с рисунком Цветок",
         count:2,
@@ -113,7 +113,8 @@ let toyc = [
         shape:"шар",
         color:"Желтый",
         size:"большой",
-        favorite:false
+        favorite:false,
+        image: "./images/toy_red.png" 
     },
     {
         name:"Зеленый шар с цветочным узором",
@@ -122,7 +123,8 @@ let toyc = [
         shape: "шар",
         color: "зеленый",
         size: "большой",
-        favorite: false
+        favorite: false,
+        image: "./images/toy_red.png" 
     },
     {
         name:" Крастный шар с напыление",
@@ -131,7 +133,8 @@ let toyc = [
         shape:"шар",
         color:"Желтый",
         size:"большой",
-        favorite:false
+        favorite:false,
+        image: "./images/toy_red.png" 
     },
     {
         name:"Большой шар с рисунком Цветок",
@@ -140,7 +143,8 @@ let toyc = [
         shape:"шар",
         color:"Желтый",
         size:"большой",
-        favorite:false
+        favorite:false,
+        image: "./images/toy_red.png" 
     },
     {
         name:"Зеленый шар с цветочным узором",
@@ -149,7 +153,8 @@ let toyc = [
         shape: "шар",
         color: "зеленый",
         size: "большой",
-        favorite: false
+        favorite: false,
+        image: "./images/toy_red.png" 
     },
     {
         name:" Крастный шар с напыление",
@@ -158,12 +163,13 @@ let toyc = [
         shape:"шар",
         color:"Желтый",
         size:"большой",
-        favorite:false
+        favorite:false,
+        image: "./images/toy_red.png" 
     },
 ]
 
 
-toyc.forEach(toy => {
+toys.forEach(toy => {
     console.log(
         toy.name + 
         " - " + 
@@ -185,5 +191,25 @@ let updateToys = toys.map(toy =>{
 
 console.log(updateToys);
 
+
+
+const toysGrid = document.querySelector(".toys-grid");
+
+toys.forEach((toy, index) => {
+
+const toyBox = document.createElement("div");
+const img = document.createElement("img");
+img.src = toy.image;
+img.classList.add("toy");
+img.draggable= true;
+img.dataset.index = index;
+
+const countBox = document.createElement("div");
+countBox.textContent = toy.count;
+countBox.style.color = "white";
+countBox.style.textAlign = "center";
+countBox.style.fontSize = "14px";
+
+});
 
 
