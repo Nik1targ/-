@@ -248,11 +248,34 @@ const y = e.clientY - rect.top;
 if (e.dataTransfer.getData("toy") !== "") {
     const toyIndex = e.dataTransfer.getData("toy");
     const toy = toys[toyIndex];
-if(toy.count > 0){
-    toy.count -= 1;
+        if(toy.count > 0){
+            toy.count -= 1;
 
-    const xPos = x - 40;
-    const yPos = y - 40;
-}
+             const xPos = x - 40;
+             const yPos = y - 40;
+
+             const img = document.createElement("img");
+             img.src = toy.image;
+             img.classList.add("toy-on-tree");
+
+             img.style.left = xPos + "px";
+             img.style.top = yPos + "px";
+
+             treeAria.appendChild(img);
+
+             currentTree.addToy(toy, xPos , yPos);
+
+             toysGrid.children[toyIndex].children[1].textContent = toy.count;
+
+
+             img.addEventListener("click", () => {
+                img.remove();
+
+                toy.count += 1;
+                toysGrid.children[toyIndex].children[1].textContent = toy.count;
+
+                currentTree.toys = currentTree.toys.filter( t=>  t.id !== toy.td);
+             })
+        }
 }
 
