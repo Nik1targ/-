@@ -99,6 +99,8 @@ console.log(sentence);
 
 
 
+
+
 let toyString= "шар,звезда,колокольчик";
 
 let toyz = toyString.split(", ");
@@ -210,6 +212,47 @@ countBox.style.color = "white";
 countBox.style.textAlign = "center";
 countBox.style.fontSize = "14px";
 
+toyBox.appendChild(img);
+toyBox.appendChild(countBox);
+
+toysGrid.appendChild(toyBox);
+
+
+img.addEventListener("dragstart", e => {
+    if (toy.count === 0) {
+        e.preventDefault();
+        return;
+    }
+    e.dataTransfer.setData("toy", index);
+
+})
+
+
 });
 
+
+const treeAria = document.querySelector(".tree-area");
+
+treeAria.addEventListener("dragover", e => e.preventDefault());
+
+treeAria.addEventListener("drop", e => {
+    e.preventDefault();
+})
+
+
+const rect = treeAria.getBoundingClientRect();
+
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+
+if (e.dataTransfer.getData("toy") !== "") {
+    const toyIndex = e.dataTransfer.getData("toy");
+    const toy = toys[toyIndex];
+if(toy.count > 0){
+    toy.count -= 1;
+
+    const xPos = x - 40;
+    const yPos = y - 40;
+}
+}
 
