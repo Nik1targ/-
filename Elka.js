@@ -330,6 +330,33 @@ treeArea.addEventListener("drop", e => {
   }
 });
 
+
+
+
+let currentTree = {
+    type: "",
+    garland: "",
+    toys: [],
+  
+    setTree(newType) {
+      this.type = newType;
+    },
+  
+    setGarland(newGarland) {
+      this.garland = newGarland;
+    },
+
+    addToy(toyObj) {
+      this.toys.push(toyObj);
+    },
+  
+    showInfo() {
+      console.log("Ёлка:", this.type);
+      console.log("Гирлянда:", this.garland);
+      console.log("Игрушки:", this.toys);
+    }
+};
+
 const speakerBtn = document.getElementById("speaker-btn");
 const audio = document.getElementById("xmas-audio");
 
