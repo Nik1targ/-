@@ -30,3 +30,29 @@ body {
     padding: 20px;
     overflow-y: auto;
   }
+
+
+  .toy-on-tree {
+    position: absolute;
+    cursor: pointer;
+    pointer-events: auto;  
+    z-index: 5;            
+  }
+
+
+  .garland-on-tree {
+    position: absolute;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 4;
+    animation: blink 1.6s infinite ease-in-out;
+  }
+
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+
