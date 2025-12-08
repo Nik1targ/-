@@ -330,3 +330,19 @@ treeArea.addEventListener("drop", e => {
   }
 });
 
+const speakerBtn = document.getElementById("speaker-btn");
+const audio = document.getElementById("xmas-audio");
+
+let musicOn = false;
+
+speakerBtn.addEventListener("click", () => {
+  if (!musicOn) {
+    audio.play();
+    musicOn = true;
+    speakerBtn.classList.add("sound-on");
+  } else {
+    audio.pause();
+    musicOn = false;
+    speakerBtn.classList.remove("sound-on");
+  }
+});
