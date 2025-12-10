@@ -360,9 +360,6 @@ treeArea.addEventListener("drop", e => {
 
 
 
-
-
-
 const speakerBtn = document.getElementById("speaker-btn");
 const audio = document.getElementById("xmas-audio");
 
@@ -379,6 +376,39 @@ speakerBtn.addEventListener("click", () => {
     speakerBtn.classList.remove("sound-on");
   }
 });
+
+
+
+
+let treeData = {
+  type: currentTree.type,
+  garland: currentTree.garland,
+  toys: currentTree.toys
+};
+
+
+
+function getResultCurrenttreeData() {
+  const resultCurrenttreeData = {
+    type: currentTree.type,
+    garland: currentTree.garland,
+    toys: currentTree.toys.map(toy => ({
+      id: toy.id,
+      x: toy.x,
+      y: toy.y,
+      image: toy.image
+    }))
+  };
+
+
+  return resultCurrenttreeData;
+
+}
+
+
+
+
+
 
 
 
