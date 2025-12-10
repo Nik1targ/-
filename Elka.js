@@ -407,7 +407,16 @@ function getResultCurrenttreeData() {
 
 
 
+const saveTreeBtn = document.getElementById(save-Tree-Btn);
 
+saveTreeBtn.addEventListener("click",() =>{
+  const resultCurrentTreeData = getResultCurrenttreeData();
+  console.log(resultCurrentTreeData);
+
+  const resultCurrentTreeJSON = JSON.stringify(resultCurrentTreeData);
+  console.log(resultCurrent|TreeJSON);
+
+});
 
 
 
