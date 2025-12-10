@@ -414,7 +414,7 @@ saveTreeBtn.addEventListener("click",() =>{
   console.log(resultCurrentTreeData);
 
   const resultCurrentTreeJSON = JSON.stringify(resultCurrentTreeData);
-  console.log(resultCurrent|TreeJSON);
+  console.log(resultCurrentTreeJSON);
 
 });
 
